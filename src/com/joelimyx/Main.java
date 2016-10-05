@@ -1,5 +1,7 @@
 package com.joelimyx;
 
+import com.sun.deploy.util.StringUtils;
+
 import java.util.Scanner;
 
 public class Main {
@@ -108,10 +110,17 @@ public class Main {
     public static void consonantVowel(){
         Scanner input = new Scanner(System.in);
         String character;
+        boolean isNum = true;
         do {
             System.out.println("Please enter a single character: ");
             character = input.nextLine();
-        }while(character.length() >1 || (character.isEmpty()));
+            int num = Integer.parseInt(character);
+            try {
+
+            }catch(NumberFormatException e){
+                    isNum = false;
+            }
+        }while(character.length() >1 || (character.isEmpty()) ||isNum );
         character= character.toLowerCase();
         switch (character){
             case "a":
