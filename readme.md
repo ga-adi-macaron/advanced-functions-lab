@@ -14,7 +14,7 @@ creator:
 ## Exercise
 
 #### Requirements
-You are supposed to write 10 functions that accept parameters. You can use control flow and multiple conditionals. When a function is created, please call it and test all the cases including edge ones (e.g. empty strings, null values, big and small values). It is of high importance to practice and master Java fundamentals, which are the core of Android development. Java functions create the solid foundation, without which it is impossible to build high quality bug free apps.
+You are supposed to write 10 functions that accept parameters. You can use control flow and multiple conditionals. When a function is created, please call it (from inside the `main` method) and test all the cases including _edge cases_ (e.g. empty strings, null values, extremely big and small values). It is of high importance to practice and master Java fundamentals, which are the core of Android development. Java functions create the solid foundation, without which it is impossible to build high quality bug free apps.
 
 * Fork this repository & clone your fork to your computer
 * Inside the repo folder create a new IntelliJ project
@@ -52,4 +52,4 @@ You are supposed to write 10 functions that accept parameters. You can use contr
 
 #### Deliverable
 
-You are expected to create one Java file with 10 functions and run them testing all cases.
+You are expected to create one Java file with 10 functions and a `main` method that calls all the other functions, testing all cases. This file should be in an IntelliJ project, and you should submit it via pull request.
