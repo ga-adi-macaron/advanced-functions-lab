@@ -7,26 +7,48 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+    //1.Test for 1st
 
         //System.out.println(isEven(14));
         //System.out.println(isEven(303));
         //System.out.println(isEven(0));
+
+        //2. Test for 2nd
 
 //        System.out.println(isSameWord("Forty", "Farty"));
 //        System.out.println(isSameWord("Koala", "Quola"));
 //        System.out.println(isSameWord("FIRE", "fire"));
 //        System.out.println(isSameWord("water","water"));
 
-        printUntilW("SeeSaw");
-        printUntilW("Skyward");
-        printUntilW("Whales");
-        printUntilW("Fireflies");
+        //3. Test for third
+
+//        printUntilW("SeeSaw");
+//        printUntilW("Skyward");
+//        printUntilW("Whales");
+//        printUntilW("Fireflies");
+
+        //4. Test for 4th
+//        for (int i=0; i<30; i++ ){
+//            System.out.println(randomNumber()+"\n");
+//        }
+
+        //5.Test for 5th
+        //System.out.println(getNextDate(24,4,1989));
+        //System.out.println(getNextDate(31,10,2016));
+        //System.out.println(getNextDate(31,12,1999)); //testing y2k
+        //System.out.println(getNextDate(40,1,3210)); //testing illegal day
+        //System.out.println(getNextDate(5,14, 1445)); //testing illegal month
+
+        //6. Test for 6th
+
 
 //        checkIfVowel();
 
 
 
     }
+
+    //First function of assignment
     public static boolean isEven(int num){
         if (num %2 == 0){
             return true;
@@ -34,6 +56,8 @@ public class Main {
             return false;
         }
     }
+
+    //Second function of assignment
     public static boolean isSameWord(String firstStr, String secondStr){
         firstStr = firstStr.toLowerCase();
         secondStr = secondStr.toLowerCase();
@@ -43,6 +67,8 @@ public class Main {
             return false;
         }
     }
+
+    //Third function of assignment
     public static void printUntilW(String word){
         int i = 0;
         while (i < word.length()){
@@ -55,9 +81,11 @@ public class Main {
             }
         }
     }
+
+    // Fourth function of assignment
     public static int randomNumber(){
         Random randomGen = new Random();
-        int rNum = randomGen.nextInt();
+        int rNum = randomGen.nextInt(100);
         System.out.println(rNum);
         if (rNum>50){
             return rNum;
@@ -66,44 +94,58 @@ public class Main {
         }
 
     }
+
+    //Fifth function of assignment
     public static String getNextDate(int day, int month, int year){
-        int daysInMonth= 30;
-        int nextDay = day++;
-        int monthHolder = month;
-        int yearHolder= year;
-        switch (month){
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
-                daysInMonth= 31;
-                break;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
-                daysInMonth=30;
-                break;
-            case 2:
-                if (year%4==0){
-                    daysInMonth=29;
-                }else {
-                    daysInMonth=28;
-                }
+        if (month>12){
+            return "You entered an invalid month value.Please check your input";
         }
-        if (day >daysInMonth){
-            monthHolder++;
-            nextDay = 1;
-            if (month>12){
-                yearHolder++;
-                monthHolder=1;
+        else{
+            int daysInMonth= 30;
+            int monthHolder = month;
+            int yearHolder= year;
+
+            switch (month){
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    daysInMonth= 31;
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    daysInMonth=30;
+                    break;
+                case 2:
+                    if (year%4==0){
+                        daysInMonth=29;
+                    }else {
+                        daysInMonth=28;
+                    }
             }
+            if (day>daysInMonth){
+                return "There aren't that many days in that month. Please check your input.";
+            }else {
+                int nextDay = day + 1;
+                if (nextDay > daysInMonth) {
+                    monthHolder++;
+                    nextDay = 1;
+                    if (monthHolder > 12) {
+                        yearHolder++;
+                        monthHolder = 1;
+                    }
+                }
+                String message = "day:" + nextDay + " month:" + monthHolder + " year:" + yearHolder;
+                return message;
+            }
+
         }
-        String message = "day:" + nextDay + " month:" + monthHolder + " year:" + yearHolder;
-        return message;
+
     }
 
 
