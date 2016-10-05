@@ -7,69 +7,70 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-//    //1.Test for 1st
-//
-//        System.out.println(isEven(14));
-//        System.out.println(isEven(303));
-//        System.out.println(isEven(0));
-//
-//        //2. Test for 2nd
-//
-//        System.out.println(isSameWord("Forty", "Farty"));
-//        System.out.println(isSameWord("Koala", "Quola"));
-//        System.out.println(isSameWord("FIRE", "fire"));
-//        System.out.println(isSameWord("water","water"));
-//
-////        3. Test for third
-//
-//        printUntilW("SeeSaw");
-//        printUntilW("Skyward");
-//        printUntilW("Whales");
-//        printUntilW("Fireflies");
-//
-//        //4. Test for 4th
-//
-//        for (int i=0; i<30; i++ ){
-//            System.out.println(randomNumber()+"\n");
-//        }
-//
-//        ////5.Test for 5th
-//
-//        System.out.println(getNextDate(24,4,1989));
-//        System.out.println(getNextDate(31,10,2016));
-//        System.out.println(getNextDate(31,12,1999)); //testing y2k
-//        System.out.println(getNextDate(40,1,3210)); //testing illegal day
-//        System.out.println(getNextDate(5,14, 1445)); //testing illegal month
-//
-//        ////6. Test for 6th
-//
-//        System.out.println(omitEveryOther("It was a bright cold day in April"));
-//        System.out.println(omitEveryOther("Oceania"));
-//        System.out.println(omitEveryOther("Eastasia"));
-//        System.out.println(omitEveryOther("Doublethink"));
-//
-//
-//        ////7.Test for 7th
-//
-//        printAllBut4(100);
-//        printAllBut4(4);
-//        printAllBut4(0);
-//        printAllBut4(5); //test cutoff
-//
-//        ////8. Test for 8th
-//
-//        System.out.println(checkNumbers(5, 5));
-//        System.out.println(checkNumbers(7, 10));
-//        System.out.println(checkNumbers(-2, 2));
-//
-//        //9. Test for 9th
-//
-//        askClientCountry();
-//
-//
-//        //10. Test for final
-//
-//        checkIfVowel();
+    //1.Test for 1st
+
+        System.out.println(isEven(14));
+        System.out.println(isEven(303));
+        System.out.println(isEven(0));
+        System.out.println(isEven(-4));
+
+        //2. Test for 2nd
+
+        System.out.println(isSameWord("Forty", "Farty"));
+        System.out.println(isSameWord("Koala", "Quola"));
+        System.out.println(isSameWord("FIRE", "fire"));
+        System.out.println(isSameWord("water","water"));
+
+//        3. Test for third
+
+        printUntilW("SeeSaw");
+        printUntilW("Skyward");
+        printUntilW("Whales");
+        printUntilW("Fireflies");
+
+        //4. Test for 4th
+
+        for (int i=0; i<30; i++ ){
+            System.out.println(randomNumber()+"\n");
+        }
+
+        ////5.Test for 5th
+
+        System.out.println(getNextDate(24,4,1989));
+        System.out.println(getNextDate(31,10,2016));
+        System.out.println(getNextDate(31,12,1999)); //testing y2k
+        System.out.println(getNextDate(40,1,3210)); //testing illegal day
+        System.out.println(getNextDate(5,14, 1445)); //testing illegal month
+
+        ////6. Test for 6th
+
+        System.out.println(omitEveryOther("It was a bright cold day in April"));
+        System.out.println(omitEveryOther("Oceania"));
+        System.out.println(omitEveryOther("Eastasia"));
+        System.out.println(omitEveryOther("Doublethink"));
+
+
+        ////7.Test for 7th
+
+        printAllBut4(100);
+        printAllBut4(4);
+        printAllBut4(0);
+        printAllBut4(5); //test cutoff
+
+        ////8. Test for 8th
+
+        System.out.println(checkNumbers(5, 5));
+        System.out.println(checkNumbers(7, 10));
+        System.out.println(checkNumbers(-2, 2));
+
+        //9. Test for 9th
+
+        askClientCountry();
+
+
+        //10. Test for final
+
+        checkIfVowel();
 
 
 
