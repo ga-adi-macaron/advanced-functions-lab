@@ -9,34 +9,45 @@ public class Main {
         Scanner input = new Scanner(System.in);
         printInstructions();
         while(true){
-            int userInt = 11;
+            int userInt;
             String userInput = input.nextLine();
             try{
                 userInt = Integer.parseInt(userInput);
             }catch (NumberFormatException nfe){
-
+                if(userInput.equals("")){
+                    userInt = 12;
+                }else {
+                    userInt = -1;
+                }
             }
             switch (userInt){
                 case 0:
                     System.out.println("Thanks for playing!");
                     return;
                 case 1:
-                    System.out.println("Enter a number and I'll tell you if it is even.");
-                    int num = input.nextInt();
-                    System.out.println(isEven(num));
+                    System.out.println("Enter a whole number and I'll tell you if it is even.");
+                    int numInt;
+                    String num = input.next();
+                    try{
+                        numInt = Integer.parseInt(num);
+                    }catch (NumberFormatException nfe){
+                        System.out.println("maybe you didn't read the prompt...");
+                        break;
+                    }
+                    System.out.println(isEven(numInt));
                     break;
                 case 2:
                     System.out.println("Enter two words and I'll tell you whether or not they are identical");
-                    System.out.println("What's the first word?");
+                    System.out.println("*************\nWhat's the first word?");
                     String firstWord = input.next();
-                    System.out.println("Okay, now the second word?");
+                    System.out.println("*************\nOkay, now the second word?");
                     String secondWord = input.next();
                     System.out.println(isSameSpelling(firstWord, secondWord));
                     break;
                 case 3:
                     System.out.println("Enter some text and I will print out each letter except for the letter 'w'\n" +
                             "I HATE the letter 'w'...");
-                    String word = input.next();
+                    String word = input.nextLine();
                     printLetters(word);
                     break;
                 case 4:
@@ -78,7 +89,6 @@ public class Main {
                     break;
                 case 6:
                     System.out.println("Enter text and I will spit out every other letter");
-                    input.nextLine();
                     String text = input.nextLine();
                     System.out.println(everyOtherLetter(text));
                     break;
@@ -109,6 +119,7 @@ public class Main {
                         num2Double = Double.parseDouble(num2);
                     }catch (NumberFormatException nfe){
                         System.out.println("Don't be difficult...");
+                        break;
                     }
                     System.out.println(funkyCalculator(num1Double,num2Double));
                     break;
@@ -125,8 +136,13 @@ public class Main {
                 case 11:
                     printInstructions();
                     break;
+                case 12:
+                    break;
                 default:
-                    System.out.println("If you're confused you can type '11' to view the instructions.");
+                    System.out.println("*********************\n" +
+                            "If you're confused, type '11' to view the instructions.\n" +
+                            "*********************");
+                    break;
             }
         }
     }
@@ -197,7 +213,6 @@ public class Main {
         }
         return "Tomorrow's date is: "+month+"/"+day+"/"+year;
     }
-
     public static String everyOtherLetter(String word){
         String newWord = "";
         for(int i=0; i<word.length(); i++){
