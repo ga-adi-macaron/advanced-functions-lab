@@ -1,6 +1,5 @@
 package Nikita.Shuvalov;
 
-import sun.nio.ch.Interruptible;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -8,6 +7,22 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+
+        //System.out.println(isEven(14));
+        //System.out.println(isEven(303));
+        //System.out.println(isEven(0));
+
+//        System.out.println(isSameWord("Forty", "Farty"));
+//        System.out.println(isSameWord("Koala", "Quola"));
+//        System.out.println(isSameWord("FIRE", "fire"));
+//        System.out.println(isSameWord("water","water"));
+
+        printUntilW("SeeSaw");
+        printUntilW("Skyward");
+        printUntilW("Whales");
+        printUntilW("Fireflies");
+
+//        checkIfVowel();
 
 
 
@@ -31,13 +46,13 @@ public class Main {
     public static void printUntilW(String word){
         int i = 0;
         while (i < word.length()){
-            char character = word.charAt(i);
-            if (character == 'w'){
+            char character = word.toLowerCase().charAt(i);
+            if (character != 'w'){
+                System.out.println(word.charAt(i));
+                i++;
+            }else {
                 break;
             }
-            System.out.println(character);
-            i++;
-
         }
     }
     public static int randomNumber(){
@@ -158,6 +173,10 @@ public class Main {
             System.out.println("I'm sorry, you entered too many characters. Please try again.");
             checkIfVowel();
         }
+        if (userInput == null){
+            System.out.println("You did not enter anything. Please try again.");
+            checkIfVowel();
+        }
         try {
             System.out.println(Double.valueOf(userInput)+ " is a numerical value. Please enter a letter.");
             checkIfVowel();
@@ -178,6 +197,7 @@ public class Main {
 
             }
         }
+        checkIfVowel();
 
     }
 
