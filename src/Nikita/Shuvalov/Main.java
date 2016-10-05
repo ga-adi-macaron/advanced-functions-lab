@@ -40,6 +40,19 @@ public class Main {
         //System.out.println(getNextDate(5,14, 1445)); //testing illegal month
 
         //6. Test for 6th
+//        System.out.println(omitEveryOther("It was a bright cold day in April"));
+//        System.out.println(omitEveryOther("Oceania"));
+//        System.out.println(omitEveryOther("Eastasia"));
+//        System.out.println(omitEveryOther("Doublethink"));
+
+
+        //7.Test for 7th
+        printAllBut4(100);
+        printAllBut4(4);
+        printAllBut4(0);
+        printAllBut4(5); //test cutoff
+
+
 
 
 //        checkIfVowel();
@@ -148,7 +161,7 @@ public class Main {
 
     }
 
-
+    // Sixth function of assignment
     public static String omitEveryOther(String word){
         boolean keepCurrent = true;
         int i = 0;
@@ -160,19 +173,23 @@ public class Main {
         }else {
                 keepCurrent=true;
             }
+            i++;
 
         }
         return newSpeak;
     }
 
+    // Seventh function of assignment
     public static void printAllBut4(int num){
         int counter = 1;
         if (num <=5){
             System.out.println("Illegal number; number needs to be greater than 5");
-        }
-        while (num< counter){
-            if (counter != 4){
-                System.out.println(counter);
+        }else {
+            while (num > counter) {
+                if (counter != 4) {
+                    System.out.println(counter);
+                }
+                counter++;
             }
         }
     }
