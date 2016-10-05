@@ -7,54 +7,68 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-    //1.Test for 1st
-
-        //System.out.println(isEven(14));
-        //System.out.println(isEven(303));
-        //System.out.println(isEven(0));
-
-        //2. Test for 2nd
-
+//    //1.Test for 1st
+//
+//        System.out.println(isEven(14));
+//        System.out.println(isEven(303));
+//        System.out.println(isEven(0));
+//
+//        //2. Test for 2nd
+//
 //        System.out.println(isSameWord("Forty", "Farty"));
 //        System.out.println(isSameWord("Koala", "Quola"));
 //        System.out.println(isSameWord("FIRE", "fire"));
 //        System.out.println(isSameWord("water","water"));
-
-        //3. Test for third
-
+//
+////        3. Test for third
+//
 //        printUntilW("SeeSaw");
 //        printUntilW("Skyward");
 //        printUntilW("Whales");
 //        printUntilW("Fireflies");
-
-        //4. Test for 4th
+//
+//        //4. Test for 4th
+//
 //        for (int i=0; i<30; i++ ){
 //            System.out.println(randomNumber()+"\n");
 //        }
-
-        //5.Test for 5th
-        //System.out.println(getNextDate(24,4,1989));
-        //System.out.println(getNextDate(31,10,2016));
-        //System.out.println(getNextDate(31,12,1999)); //testing y2k
-        //System.out.println(getNextDate(40,1,3210)); //testing illegal day
-        //System.out.println(getNextDate(5,14, 1445)); //testing illegal month
-
-        //6. Test for 6th
+//
+//        ////5.Test for 5th
+//
+//        System.out.println(getNextDate(24,4,1989));
+//        System.out.println(getNextDate(31,10,2016));
+//        System.out.println(getNextDate(31,12,1999)); //testing y2k
+//        System.out.println(getNextDate(40,1,3210)); //testing illegal day
+//        System.out.println(getNextDate(5,14, 1445)); //testing illegal month
+//
+//        ////6. Test for 6th
+//
 //        System.out.println(omitEveryOther("It was a bright cold day in April"));
 //        System.out.println(omitEveryOther("Oceania"));
 //        System.out.println(omitEveryOther("Eastasia"));
 //        System.out.println(omitEveryOther("Doublethink"));
-
-
-        //7.Test for 7th
-        printAllBut4(100);
-        printAllBut4(4);
-        printAllBut4(0);
-        printAllBut4(5); //test cutoff
-
-
-
-
+//
+//
+//        ////7.Test for 7th
+//
+//        printAllBut4(100);
+//        printAllBut4(4);
+//        printAllBut4(0);
+//        printAllBut4(5); //test cutoff
+//
+//        ////8. Test for 8th
+//
+//        System.out.println(checkNumbers(5, 5));
+//        System.out.println(checkNumbers(7, 10));
+//        System.out.println(checkNumbers(-2, 2));
+//
+//        //9. Test for 9th
+//
+//        askClientCountry();
+//
+//
+//        //10. Test for final
+//
 //        checkIfVowel();
 
 
@@ -194,6 +208,7 @@ public class Main {
         }
     }
 
+    //Eighth function of assignment
     public static int checkNumbers(int num1, int num2){
         if (num1 != num2 ){
             num1++;
@@ -205,6 +220,7 @@ public class Main {
         return num1+num2;
     }
 
+    //Nineth function of assignment
     public static void askClientCountry (){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please input country");
@@ -222,48 +238,47 @@ public class Main {
             default:
                 System.out.println("Unknown");
         }
+//        askClientCountry(); //Uncomment to repeat, for debugging purposes.
     }
 
-    public static void checkIfVowel(){
+    //Final method of assignment
+    public static void checkIfVowel() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a letter to see if it is a vowel or consonant");
         String userInput = scanner.nextLine();
-        if (userInput.length()>1){
+        if (userInput.length() > 1) {
             System.out.println("I'm sorry, you entered too many characters. Please try again.");
             checkIfVowel();
-        }
-        if (userInput == null){
+        } else if (userInput.length() == 0) {
             System.out.println("You did not enter anything. Please try again.");
             checkIfVowel();
-        }
-        try {
-            System.out.println(Double.valueOf(userInput)+ " is a numerical value. Please enter a letter.");
-            checkIfVowel();
-        } catch (Exception invalidType){
-            char check = userInput.toLowerCase().charAt(0);
-            switch(check){
-                case 'a':
-                case 'e':
-                case 'i':
-                case 'o':
-                case 'u':
-                    System.out.println(check + " is a vowel");
-                    break;
-                case 'y':
-                    System.out.println("Some people may consider \"y\" as a vowel, but those same people may or may not huff glue.");
-                default:
-                    System.out.println(check + " is a consonant");
+        } else {
+            try {
+                System.out.println(Double.valueOf(userInput) + " is a numerical value. Please enter a letter.");
+                checkIfVowel();
+            } catch (Exception invalidType) {
+                char check = userInput.toLowerCase().charAt(0);
+                switch (check) {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        System.out.println(check + " is a vowel");
+                        break;
+                    case 'y':
+                        System.out.println("Some people may consider \"y\" as a vowel, but they are not to be trusted.");
+                        break;
+                    default:
+                        System.out.println(check + " is a consonant");
+                        break;
 
+                }
             }
-        }
-        checkIfVowel();
+//        checkIfVowel(); //Uncomment this to repeat method for debugging purposes.
 
+        }
     }
 
 
 }
-
-
-//
-//        Write a function that asks the user to type in a letter and prints out whether the letter is a vowel or a consonant.
-// You may use control flow and multiple conditionals.
