@@ -52,7 +52,7 @@ public class Main {
 
     }
     public static String getNextDate(int day, int month, int year){
-        int daysInMonth;
+        int daysInMonth= 30;
         int nextDay = day++;
         int monthHolder = month;
         int yearHolder= year;
@@ -161,7 +161,7 @@ public class Main {
         try {
             System.out.println(Double.valueOf(userInput)+ " is a numerical value. Please enter a letter.");
             checkIfVowel();
-        } catch{
+        } catch (Exception invalidType){
             char check = userInput.toLowerCase().charAt(0);
             switch(check){
                 case 'a':
@@ -169,6 +169,12 @@ public class Main {
                 case 'i':
                 case 'o':
                 case 'u':
+                    System.out.println(check + " is a vowel");
+                    break;
+                case 'y':
+                    System.out.println("Some people may consider \"y\" as a vowel, but those same people may or may not huff glue.");
+                default:
+                    System.out.println(check + " is a consonant");
 
             }
         }
