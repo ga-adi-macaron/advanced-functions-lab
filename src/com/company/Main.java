@@ -5,18 +5,17 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-//        System.out.println(isEven(11));
-//        System.out.println(stringCompare("hello", "hello"));
-//        System.out.println(genRandom());
-//        System.out.println(dateNext(30, 4, 2016));
-//        System.out.println(numberAddition(2, 1));
-//        System.out.println("Enter Country Domain");
-//        countryTyping();
-//        System.out.println("Type in a Letter");
-//        typeJustALetter();
-//        printStringChars("do_something_with");
-//        getNumbers(15);
-
+        System.out.println(isEven(11));
+        System.out.println(stringCompare("hello", "hello"));
+        System.out.println(genRandom());
+        System.out.println(dateNext(30, 4, 2016));
+        System.out.println(numberAddition(2, 1));
+        System.out.println("Enter Country Domain");
+        countryTyping();
+        System.out.println("Type in a Letter");
+        typeJustALetter();
+        printStringChars("do_something_with");
+        getNumbers(15);
 
     }
 
@@ -98,7 +97,7 @@ public class Main {
         return nextDay;
     }
 
-    //6th
+    //6th - Couldn't figure, need help with this one.
 
     //7th
     public static void getNumbers(int numberEntered) {
